@@ -6,7 +6,7 @@
 
 一键免费部署你的私人 ChatGPT+Midjourney 网页应用（基于[ChatGPT-Next-Web](https://github.com/Yidadaa/ChatGPT-Next-Web)开发）
 
-[QQ交流群](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=gAGpNxOKdRB3L_IiHWAfT4MUQzgBOor-&authKey=Ty8WQgZFub8W1EsG3LQE2B3xxRRBzD0Rj1rPyRVFdT6IqnJgGcpPZB5l8ZVJTB1n&noverify=0&group_code=849273126) | [Telegram群组](https://t.me/gptmj) | [全平台AI智能助手](https://dd.gitcdn.top/Atop)
+[QQ交流群](https://github.com/Licoy/ChatGPT-Midjourney/issues/30) | [全平台AI智能助手](https://dd.gitcdn.top/Atop)
 
 [![Deploy with Vercel](https://img.shields.io/badge/Vercel-部署-00CCCC.svg?logo=vercel)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FLicoy%2FChatGPT-Midjourney&env=OPENAI_API_KEY&env=MIDJOURNEY_PROXY_URL&env=CODE&project-name=chatgpt-midjourney&repository-name=ChatGPT-Midjourney)
 [![Deploy with Railway](https://img.shields.io/badge/MidjourneyProxy-Railway部署-009900.svg?logo=railway)](https://github.com/novicezk/midjourney-proxy/blob/main/docs/railway-start.md)
@@ -48,19 +48,20 @@ MIDJOURNEY_PROXY_URL=http://yourip:port
 ### ChatGPT-Midjourney 前端部署
 #### Docker
 ```shell
-docker pull licoy/chatgpt-midjourney:latest
 docker run -d -p 3000:3000 \
    -e OPENAI_API_KEY="sk-xxx" \
    -e CODE="123456" \
    -e BASE_URL="https://api.openai.com" \
    -e MIDJOURNEY_PROXY_URL="http://ip:port" \
-   licoy/chatgpt-midjourney:latest
+   licoy/chatgpt-midjourney:v1.3.6
 ```
 #### Vercel
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FLicoy%2FChatGPT-Midjourney&env=OPENAI_API_KEY&env=MIDJOURNEY_PROXY_URL&env=CODE&project-name=chatgpt-midjourney&repository-name=ChatGPT-Midjourney)
 #### Zeabur
 > - 新注册的 Github 账号可立即使用 Zeabur
 > - Zeabur 服务器运行在国外，其生成的域名 *.zeabur.app 国内可直接访问
+
+[![Deploy on Zeabur](https://zeabur.com/button.svg)](https://dash.zeabur.com/templates/AX8RDG)
 
 <details> <summary>开始部署（点我展开）</summary>
 
@@ -112,7 +113,6 @@ npm run start // #或者开发模式启动： npm run dev
 #### Docker
 - 运行 `midjourney-proxy` (Midjourney API服务，更多参数配置可以参考：[midjourney-proxy](https://github.com/novicezk/midjourney-proxy))
 ```shell
-docker pull novicezk/midjourney-proxy:latest
 docker run -d --name midjourney-proxy \
  -p 8080:8080 \
  -e mj.discord.guild-id=xxx \
@@ -120,7 +120,7 @@ docker run -d --name midjourney-proxy \
  -e mj.discord.user-token=xxx \
  -e mj.discord.bot-token=xxx \
  --restart=always \
- novicezk/midjourney-proxy:latest
+ novicezk/midjourney-proxy:2.2.3
 ```
 #### Railway
 > Railway是一个提供弹性部署方案的平台，服务在海外，方便MidJourney的调用。
@@ -131,6 +131,8 @@ docker run -d --name midjourney-proxy \
 > - 新注册的 Github 账号可能无法使用 Railway，但是能用 Zeabur 
 > - 通过 Railway 部署的项目会自动生成一个域名，然而因为某些原因，形如 *.up.railway.app 的域名在国内无法访问
 > - Zeabur 服务器运行在国外，但是其生成的域名 *.zeabur.app 没有被污染,国内可直接访问
+
+[![Deploy on Zeabur](https://zeabur.com/button.svg)](https://dash.zeabur.com/templates/B04F4M)
 
 参考：[midjourney-proxy - Zeabur 部署教程](https://github.com/novicezk/midjourney-proxy/blob/main/docs/zeabur-start.md)
 
